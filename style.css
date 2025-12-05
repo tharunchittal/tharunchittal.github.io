@@ -1,65 +1,117 @@
-
-@import url('https://fonts.googleapis.com/css2?family=Space+Mono&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Comic+Neue&display=swap');
-
+/* Modern CSS Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
 
 body {
-    font-family: "Comic Sans MS", "Comic Sans", "Comic Neue", cursive;
-    font-weight: 700;
-    font-size: 1.05rem;
-    background-image: url("./hellfire.gif");
-    background-repeat: no-repeat;
-    background-size: 100%;
+  background-color: #f5f6fa; /* Soft modern background */
+  color: #2f3542;
+  line-height: 1.6;
+  font-size: 16px;
 }
 
-button {
-    font-family: inherit;
+/* Header */
+header {
+  background-color: #3742fa; /* Modern vibrant color */
+  color: #ffffff;
+  padding: 20px 0;
+  text-align: center;
+  font-weight: 600;
+  font-size: 1.8rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
 
-
-.login_field {
-  display: block;
+/* Navigation Bar */
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  padding: 15px 0;
+  background-color: #ffffff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  transition: background-color 0.3s;
 }
 
-div {
-  padding: 1em;
+nav a {
+  color: #3742fa;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s;
 }
 
-.settings_button {
-    position: absolute;
-    top: 0;
-    right: 0;
-    padding: 1rem;
+nav a:hover {
+  color: #ffa502;
 }
 
-
-.progress_bar {
-  padding: 0px;
-  width: 0%;
-  height: 1rem;
-  background-color: #00ff00;
+/* Container */
+.container {
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 0 20px;
 }
 
-.hideable {
-  display: none;
+/* Buttons */
+button, .btn {
+  background-color: #3742fa;
+  color: white;
+  padding: 10px 25px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
 }
 
-.json_small {
-  font-family: "Space Mono", serif;
-  font-size: 0.75rem;
+button:hover, .btn:hover {
+  background-color: #2f3542;
+  transform: translateY(-2px);
 }
 
-.overlay {
-  position: fixed;
-  border-radius: 1rem;
-  width: 45%; 
-  height: 70%;
-  background-color: rgba(255,0,255,0.5); /* Black background with opacity */
-  visibility: hidden;
+/* Cards */
+.card {
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  padding: 20px;
+  margin: 15px 0;
+  transition: transform 0.3s, box-shadow 0.3s;
 }
 
-.overflow_container {
-  max-height: 16em;
-  overflow: scroll;
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 20px 0;
+  background-color: #2f3542;
+  color: #ffffff;
+  margin-top: 40px;
+}
+
+/* Typography */
+h1, h2, h3, h4 {
+  color: #2f3542;
+  margin-bottom: 15px;
+}
+
+p {
+  margin-bottom: 15px;
+  color: #57606f;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+  }
+
+  .container {
+    padding: 0 15px;
+  }
 }
 
