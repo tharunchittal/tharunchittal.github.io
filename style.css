@@ -1,0 +1,65 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue&display=swap');
+
+
+body {
+    font-family: "Comic Sans MS", "Comic Sans", "Comic Neue", cursive;
+    font-weight: 700;
+    font-size: 1.05rem;
+    background-image: url("./hellfire.gif");
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+button {
+    font-family: inherit;
+}
+
+
+.login_field {
+  display: block;
+}
+
+div {
+  padding: 1em;
+}
+
+.settings_button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 1rem;
+}
+
+
+.progress_bar {
+  padding: 0px;
+  width: 0%;
+  height: 1rem;
+  background-color: #00ff00;
+}
+
+.hideable {
+  display: none;
+}
+
+.json_small {
+  font-family: "Space Mono", serif;
+  font-size: 0.75rem;
+}
+
+.overlay {
+  position: fixed;
+  border-radius: 1rem;
+  width: 45%; 
+  height: 70%;
+  background-color: rgba(255,0,255,0.5); /* Black background with opacity */
+  visibility: hidden;
+}
+
+.overflow_container {
+  max-height: 16em;
+  overflow: scroll;
+}
+
