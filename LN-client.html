@@ -1,45 +1,86 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
     <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width,initial-scale=1" />
+        <title>LN client</title>
         <link rel="stylesheet" href="style.css">
     </head>
-    <title>LN client</title>
     <body>
-        <img src="./languagenut.jpeg" width='30%'>
-        <div id="login" class="overlay">
-            <input class="login_field" id="username_input" type="text" placeholder="username">
-            <input class="login_field" id="password_input" type="text" placeholder="password">
-            <button class="login_field"id="login_btn"> Log In </button>
-        </div>
-        <div id="hw_panel" class="overlay">
-            <h2>homeworks</h2>
-            <input type="checkbox" id="selectall">
-            <label for="selectall">select all</label>
-
-            <div id="hw_container" class="overflow_container">
-
+        <header class="topbar">
+            <div class="brand">
+                <img src="./languagenut.jpeg" alt="LanguageNut logo" class="logo">
+                <span class="sitename">LN client</span>
             </div>
-            <button id="do_hw" style="margin: 2rem">DO THE HOMEWORK</button>
-        </div>
-        <div id="log_panel" style="right: 1em" class="overlay">
-            <h2>Logs</h2>
-
-            <div id="hw_bar" class="progress_bar"></div>
-            <br>
-                <div id="log_container" class="overflow_container">
-
+            <div class="top-actions">
+                <button id="settings_button" class="settings_button">Settings</button>
             </div>
-        </div>
-        <dialog id="settings">
-            [Esc] to exit
-            <br>
-            Select the time you want your homework to appear to be done in:
-            <input type="range" min="-3" max="18" value="2" id="speed_slider" step="0.1">
-            <br/>
-            Current speed: <span id="speed_display"></span> 
+        </header>
 
+        <main class="layout">
+            <section class="panel login_panel" id="login">
+                <h1 class="panel-title">Welcome back</h1>
+                <p class="muted">Sign in to continue</p>
+
+                <label class="visually-hidden" for="username_input">Username</label>
+                <input class="login_field" id="username_input" type="text" placeholder="Username" autocomplete="username">
+
+                <label class="visually-hidden" for="password_input">Password</label>
+                <input class="login_field" id="password_input" type="password" placeholder="Password" autocomplete="current-password">
+
+                <button class="login_field primary" id="login_btn">Log In</button>
+            </section>
+
+            <section class="panel hw_panel" id="hw_panel" aria-labelledby="homeworks_title">
+                <div class="panel-header">
+                    <h2 id="homeworks_title">Homeworks</h2>
+                    <div class="selectall">
+                        <input type="checkbox" id="selectall">
+                        <label for="selectall">Select all</label>
+                    </div>
+                </div>
+
+                <div id="hw_container" class="overflow_container" aria-live="polite">
+                    <!-- homework items injected here -->
+                </div>
+
+                <div class="panel-footer">
+                    <button id="do_hw" class="cta">DO THE HOMEWORK</button>
+                </div>
+            </section>
+
+            <aside class="panel log_panel" id="log_panel" aria-labelledby="logs_title">
+                <div class="panel-header">
+                    <h2 id="logs_title">Logs</h2>
+                </div>
+
+                <div class="progress_wrap" title="Homework progress">
+                    <div id="hw_bar" class="progress_bar" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+
+                <div id="log_container" class="overflow_container" aria-live="polite">
+                    <!-- logs injected here -->
+                </div>
+            </aside>
+        </main>
+
+        <dialog id="settings" class="settings_dialog" aria-label="Settings">
+            <div class="dialog_content">
+                <button class="dialog_close" id="settings_close" title="Close">✕</button>
+                <p class="muted small">[Esc] to exit</p>
+
+                <label for="speed_slider">Select the time you want your homework to appear to be done in:</label>
+                <input type="range" min="-3" max="18" value="2" id="speed_slider" step="0.1">
+                <div class="speed_row">
+                    Current speed: <span id="speed_display"></span>
+                </div>
+            </div>
         </dialog>
-        <button id="settings_button" class="settings_button">Settings</button>
+
+        <footer class="footer muted small">
+            Built with care — interface refreshed for a modern, responsive look.
+        </footer>
+
         <script src="index.js"></script>
     </body>
 </html>
